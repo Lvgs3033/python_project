@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="contact-container">
+    <h2 class="contact-title">📩 Contact Me</h2>
+
+    <form class="contact-form" method="POST" enctype="multipart/form-data">
+
+        <div class="input-group">
+            <div style="flex:1">
+                <label>Inquiry Type *</label>
+                <select name="type" required>
+                    <option value="">Select one...</option>
+                    <option value="project">Project Inquiry</option>
+                    <option value="job">Job Opportunity</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div style="flex:1">
+                <label>Name *</label>
+                <input type="text" name="name" placeholder="Enter your name" required>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <div style="flex:1">
+                <label>Email *</label>
+                <input type="email" name="email" placeholder="example@email.com" required>
+            </div>
+
+            <div style="flex:1">
+                <label>Phone (Optional)</label>
+                <input type="tel" name="phone" placeholder="+91 1234567890">
+            </div>
+        </div>
+
+        <label>Message *</label>
+        <textarea name="message" rows="5" placeholder="Write your message..." required></textarea>
+
+        <label>Attachments</label>
+        <div class="upload-box">
+            <p>📎 Drag & Drop<br>or Browse File</p>
+            <small>Supported formats: JPG, PNG, PDF</small>
+        </div>
+
+        <button type="submit" class="contact-submit">Send Message</button>
+    </form>
+</div>
+
+{% endblock %}
